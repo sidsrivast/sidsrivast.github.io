@@ -1,0 +1,13 @@
+%p arg(x)
+
+%p dFromN(x)
+%p dFromS(x)
+%p dFromE(x)
+%p dFromW(x)
+
+%p nextN(x,y) function
+%p nextS(x,y) function
+%p nextE(x,y) function
+%p nextW(x,y) function
+
+

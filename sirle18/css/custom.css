@@ -1,0 +1,92 @@
+body {
+   /* background:#666666; */
+    padding-top: 80px; 
+    padding-left: 10px;
+	background: #3E4649;
+    color: #f7f7f7;
+	font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+}
+
+
+body a {
+color: #FF8F00;
+color: #008080;
+color: #40C0C0;
+}
+body a:hover{
+    color: #80FFFF;
+    text-decoration: underline;
+}
+
+figcaption{
+    font-size: 13px;
+    text-alignt: center;
+    padding-top: 10px;
+}
+
+
+.title  {
+    font-family: 'Cairo', sans-serif;
+}
+
+h2,h3,h4.page {
+    font-family: 'Abel', sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+
+p{
+text-align: justify;
+}
+
+
+.navbar-custom {
+    /* background-color: #003366; */
+	font-family: 'Rajdhani', sans-serif;
+    background-color: #333333;
+}
+
+
+
+.img-fluid{
+    max-width: 100%;
+}
+
+
+ul.papers a{
+color: #40C0C0;
+color: #FF8F00;
+color: #40C0FF;
+}
+
+ul.papers a:hover{
+color: #C0FFFF;
+}
+
+desc{
+    font-size: 14px;
+}
+
+caption{
+    font-size: 2px;
+}
+
+ptitle{
+    font-weight: bold;
+    /* font-style: italic; */
+}
+
+/* .here a{ */
+/*     font-weight: bold; */
+/*     background-color: #000000; */
+/*     color: white; */
+/* } */
+
+.navbar .active{
+    font-weight: bold;
+    color: white;
+}
+

@@ -1,0 +1,78 @@
+%action no_op(){
+	%t "dummy action"
+}
+
+%action choose_undelivered_objs(TYPE){
+	%t "choose x: " + TYPE
+	{
+	chosen_obj(v, u_1) =  arg(v) & !delivered(u_1) & TYPE(u_1) & 1/2 
+	}
+}
+
+%action choose_objs(TYPE){
+	%t "choose x: TYPE"
+	{
+	chosen_obj(v, u_1) =  arg(v) & TYPE(u_1) & 1/2 
+	}
+}
+
+%action select_obj(){
+	%t "focus_chosen"
+	%f {(E(v) arg(v) & chosen_obj(v,u))}
+	%p (E(v,u) arg(v) & chosen_obj(v,u))  
+	{
+	argobj(u) = E(v) arg(v) & chosen_obj(v,u)
+	chosen_obj(u0,u1) = 0
+	}
+}
+
+%action find_dest(){
+	%t "findDest"
+	%f { E(u) argobj(u) & dest(u,v)} 
+	{
+	itemdest(v) = E(u) argobj(u) & dest(u,v)
+	scanned(u) = argobj(u)
+	argobj(u) = 0
+	}
+}
+
+%action choose_destination(D){
+	%t "choose CDest: " + D
+	%p E(u) D(u)
+	{
+	Cdestination(v) = D(v)
+	}
+}
+
+%action move(){
+	%t "MoveToCDest"
+	%p Cdestination(w) 
+	{
+	at(u,v) = ((inT(u) | T(u)) & v == w) | 
+		    (at(u,v) & !(inT(u) | T(u)))
+	Cdestination(u) = 0
+	}
+}
+
+%action load(){
+	%t "Load "
+	%p T(t) & E(v,w) (at(t, w) & argobj(v) & at(v,w)) & 
+		A(v) (!inT(v))
+	{
+	inT(u) = argobj(u)  | inT(u)
+	argobj(u) = 0
+	}
+}
+
+%action unload(){
+	%t "Unload "
+	%p T(t) & E(v) inT(v)
+	{
+	inT(w) = 0
+ 	delivered(u) = delivered(u)| (E(v) dest(u,v) & at(u,v))
+//	remove itemdest predicate if item was delivered at
+// 	itemdest.
+	itemdest(v) = itemdest(v) & !(E(u) inT(u)& dest(u,v) & at(u,v))
+	}
+}
+

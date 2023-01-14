@@ -1,0 +1,16 @@
+ mvE		(struc 0)
+Repeat
+   ' mvE'	(struc 2)
+   --> Exit at  mvE, struc 2
+ mvN	    	(struc 3)
+Repeat
+   ' mvN'	(struc 5)
+   --> Exit at  mvN, struc 5
+ mvS	    	(struc 6)
+ mvW		(struc 7)
+Repeat
+   ' mvS'	(struc 10)
+   ' mvW'	(struc 10)
+   --> Exit at  mvS, struc 10
+ mvW	    	(struc 2)
+

@@ -1,0 +1,23 @@
+/* block_pred.tvp */
+%p chosen(v1) unique		
+%p chosen2(v) unique
+%p Red(v1)			// Block Types
+%p Blue(v1)
+
+%p base(v1) unique
+%p onTable(v1)					//the onTable predicate
+%p on(v1,v2)	function acyclic invfunction	//the "on" predicate
+%p topmost(v1)
+%p misplaced(v1)
+
+%i t[on](v_1, v_2) = on*(v_1, v_2) transitive reflexive
+// Integrity constraints for transitive reachability
+%r !t[on](v_1, v_2) ==> v_1 != v_2
+%r !t[on](v_1, v_2) ==> !on(v_1, v_2)
+%r E(v_1) (t[on](v_1, v_2) & t[on](v_1, v_3) & !t[on](v_2, v_3) ) ==> t[on](v_3, v_2)
+%r (!E(v2) on(v,v2) ) & (v1 != v) ==> !t[on](v,v1)
+
+
+
+
+

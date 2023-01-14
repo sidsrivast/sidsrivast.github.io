@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Integrating Representation, Reasoning, Learning and Execution for
+Goal Directed Autonomy</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="grid.css" rel="stylesheet">
+    <link href="css/custom_rce.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Cairo|Abel|Rajdhani|Dosis:300,400,400i,700' rel='stylesheet' type='text/css'>
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!-- nav bar -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom"> 
+
+<div class="container"> 
+<div class="navbar-header"> 
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-collapse-1" aria-expanded="false"> 
+  <span class="sr-only">Toggle navigation</span> 
+  <span class="icon-bar"></span> 
+  <span class="icon-bar"></span> 
+  <span class="icon-bar"></span> 
+  </button> 
+  <a class="navbar-brand active" href="index.html">
+  AAAI SSS-18: SIRLE
+  </a>  
+</div> 
+
+        
+<div class="collapse navbar-collapse" id="my-navbar-collapse-1"> 
+  <ul class="nav navbar-nav navbar-right"> 
+    <li><a href="#overview">Overview</a>  </li> 
+  <li><a href="#submissions">Paper Submission</a></li>
+  <li><a href="#dates">Dates</a></li> 
+  <li><a href="#papers">Papers</a></li>
+  <li><a href="#invited">Invited Talks</a></li>
+  <li><a href="#organization">Organization</a></li>
+</ul> 
+</div> 
+</div> 
+</nav> 
+
+
+<div class="container">
+
+<div class="row">
+  <div class="col-sm-1"></div> 
+  <div class="col-sm-10 title">
+    <h4 class="title">AAAI Spring Symposium Series 2018 </h4>
+    <h2 class="title">Symposium on Integrating <br>  Representation, Reasoning, Learning, and
+      Execution <br> for Goal Directed Autonomy</h2>
+    <h4 class="title">March 26<sup>th</sup> &ndash; 28<sup>th</sup>, 2018</h4>
+    <h4 class="title">Stanford University</h4><br><br>
+    
+
+ 
+    
+    <!-- <span class="factoid">&nbsp List of <a href="#papers">accepted papers</a> now online ! &nbsp </span> -->
+  </div>
+  <div class="col-sm-1"></div> 
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-7">
+	<div id="overview"></div><br><br><br>
+	<h3>Overview</h3>
+	
+	<p>Recent advances in AI and robotics have led to a
+	  resurgence of interest in the objective of producing intelligent
+	  agents that help us in our daily lives. Such agents must be able
+	  to rapidly adapt to the changing goals of their users, and the
+	  changing environments in which they operate.</p>
+	 
+	<p>These requirements lead to a balancing act that most current
+	  systems have difficulty contending with: on the one hand, human
+	  interaction and computational scalability favor the use of
+	  abstracted models of problems and environments domains; on the other
+	  hand, generating goal directed behavior in the real world typically
+	  requires accurate models that are difficult to obtain and
+	  computationally hard to reason with.</p>
+	
+	<p>This symposium addresses the core research gaps that arise in
+	  designing autonomous systems that execute their actions in complex
+	  environments using imprecise models. The sources of imprecision may
+	  range from computational pragmatism to imperfect knowledge of the
+	  actual problem domain. Some of the research directions that this
+	  symposium aims to highlight are: <br> 
+	  
+	  <ul>
+	    <li> hierarchical approaches for goal directed autonomy in physically manifested intelligent
+	      systems (e.g., robotics)</li>
+	    <li>  formalizations for knowledge representation and reasoning
+	      under uncertainty for real-world systems and their simulations, including
+	      those based on logic as well as on probability theory </li>
+	    <li> tradeoffs between model verisimilitude, scalability, and executability in sequential
+	      decision making </li>
+	    <li> bridging the gaps between abstract models and reality in sequential decision making </li>
+	    <li> online model learning and model improvement during execution </li>
+	    <li> identifying modeling errors during plan execution </li>
+	    <li> integrated approaches for learning representations and execution policies </li>
+	    <li> analysis and use of abstractions in autonomous reasoning and execution </li>
+	  </ul>
+      </div>
+  <div class="col-sm-3">
+    <br><br><br><br><br>
+	<div class="panel panel-primary">
+	  <div class="panel-heading">Announcements</div>
+	  <div class="panel-body small">
+	    
+	    <ul>
+	      <li> Symposium program <a href="https://docs.google.com/document/d/e/2PACX-1vTyr4eeitjBge7iBcfLUDRdk4I5SDmaO34rObwjySt5xykeBOTl6QVEytIer1NKP69V4xTGD2HA_J9B/pub">available online</a><br>
+	      <li> Confirmed invited speakers:<br>
+		  <span class="highlight">David Aha</span>, Naval Research Laboratory<br>
+		<span class="highlight">Emma Brunskill</span>, Stanford University<br>
+		<span class="highlight">Jeremy Frank</span>, NASA Ames Research Center<br>
+	      <li> <a href="#papers">Accepted papers</a> available online<br>
+	      <li> Camera ready papers due Jan 29, 2018
+	    </ul>
+	  </div>
+	</div>
+      </div>
+    </div>
+ 
+<div class="row">
+<div class="col-sm-1"></div> 
+<div class="col-sm-10">
+
+  
+<div id="submissions"></div><br>
+<h3>Paper Submission</h3>
+We invite paper submissions on relevant topics, which include, but are not limited to:<br>
+<ul>
+  <li> Hierarchical representation, reasoning, and planning</li>
+  <li> Behavior synthesis and execution in robotics</li>
+  <li> Planning and reasoning with abstract models while ensuring executability</li>
+  <li> Abstraction from controls to logic</li>
+  <li> Execution monitoring of autonomous systems</li>
+  <li> Performance evaluation of executable autonomous systems</li>
+  <li> Integrated task and motion planning</li>
+  <li> Reasoning in the presence of abstraction</li>
+  <li> Online model learning and model improvement</li>
+  <li> Detecting model errors during execution</li>
+  <li> Integrated representation and policy learning</li>
+</ul>
+
+<p>We invite submissions of full papers (6-8 pages) and short/position papers (2-4 pages). We also solicit system demonstrations which highlight how some of the challenges of interest to this symposium were handled.</p>
+
+<p>Papers should be submitted via <a href="https://easychair.org/conferences/?conf=sirle2018">the easychair portal</a>.</p>
+
+<p>
+   Technically, symposium papers are not considered archival, and a
+   transfer of copyright to AAAI is not required.  Symposium authors
+   are free to submit their work to other venues, but they should
+   always check with that venue to be sure they have no problem with
+   it.</p>
+
+
+Please register <a href="https://www.regonline.com/sss18">here</a> to participate in the symposium.
+
+
+
+<div id="dates"></div><br>
+<h3>Important Dates</h3>
+<table class="table table-hover table-borderless table-responsive
+  table-condensed">
+  <thead>    <tr>
+        <th style="width:10%"></th>
+        <th style="width:30%"></th>
+    </tr></thead>
+  <tbody>
+    <tr>
+      <td>Paper submission</td>
+      <td><del><span class="text-warning">October 27</span></del> <span class="text-success">November 7, 2017 (extended!)</span></td>
+    </tr>
+    <tr>
+      <td>Notification</td>
+      <td>November 27, 2017</td>
+    </tr>
+    <tr>
+      <td>Camera-ready deadline</td>
+      <td>January 23, 2018</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<div id="papers"></div><br>
+<h3 id="papers">Accepted Papers <a href="https://docs.google.com/document/d/e/2PACX-1vTyr4eeitjBge7iBcfLUDRdk4I5SDmaO34rObwjySt5xykeBOTl6QVEytIer1NKP69V4xTGD2HA_J9B/pub">[Presentation Schedule]</a></h3>
+
+<table class="table table-hover table-borderless table-responsive table-condensed">
+  <thead>
+    <tr>
+        <th style="width:70%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    Download: &nbsp <a href="SIRLE18_compendium.pdf">Single PDF</a> &nbsp| &nbsp  <a href="SIRLE18_Papers.zip">ZIP archive</a>
+
+  <tr><td> Validation of Hierarchical Plans via Parsing of Attribute Grammars	 <br><author>  Roman Barták, Adrien Maillard and Rafael C. Cardoso	</author></td></tr>
+  <tr><td> Situated Planning for Execution Under Temporal Constraints	<br><author>Michael Cashmore, Andrew Coles, Bence Cserna, Erez Karpas, Daniele Magazzeni and Wheeler Ruml	</author></td></tr>
+  <tr><td> Flexible Goal-directed Agents' Behavior via DALI MASs and ASP Modules  <br><author>Stefania Costantini and Giovanni De Gasperis	</author></td></tr>
+  <tr><td> Creating and Using Tools in a Hybrid Cognitive Architecture	  <br><author>Dongkyu Choi, Son To and Pat Langley	</author></td></tr>
+  <tr><td>Perspectives on the Validation and Verification of Machine Learning Systems in the Context of Highly Automated Vehicles  <br><author>Werner Damm, Martin Fränzle, Sebastian Gerwinn and Paul Kröger	</author></td></tr>
+  <tr><td>	SiRoK: Situated Robot Knowledge - Understanding the Balance Between Situated Knowledge and Variability	   <br><author>Angel Daruna, Vivian Chu, Weiyu Liu, Meera Hahn, Priyanka Khante, Sonia Chernova and Andrea Thomaz</author></td></tr>
+  <tr><td>Teaching Virtual Agents to Perform Complex Spatial-Temporal Activities	<br><author> Tuan Do, Nikhil Krishnaswamy and James Pustejovsky	</author></td></tr>
+  <tr><td> Adversarial Regression for Stealthy Attacks in Cyber Physical Systems  <br><author>Amin Ghafouri, Yevgeniy Vorobeychik and Xenofon Koutsoukos	</author></td></tr>
+  <tr><td> Planning Hierarchies and their Connections to Language  <br><author>Nakul Gopalan	
+<tr><td> Learning Generalized Reactive Policies using Deep Neural Networks	  <br><author>Edward Groshev, Aviv Tamar, Maxwell Goldstein, Siddharth Srivastava and Pieter Abbeel	</author></td></tr>
+  <tr><td> Optimal LTL Planning for Multi-Valued Logics	  <br><author>Mohammad Hekmatnejad and Georgios Fainekos	</author></td></tr>
+  <tr><td> Constraint-Based Online Transformation of Abstract Plans into Executable Robot Actions  <br><author>Till Hofmann, Victor Mataré, Stefan Schiffer, Alexander Ferrein and Gerhard Lakemeyer	</author></td></tr>
+  <tr><td> Learning to Act in Partially Structured Dynamic Environment  <br><author>Chen Huang and Lantao Liu	</author></td></tr>
+  <tr><td> Represention, Use, and Acquisition of Affordances in Cognitive Systems	  <br><author>Pat Langley	</author></td></tr>
+  <tr><td> Learning Planning Operators from Episodic Traces	  <br><author>David Menager and Dongkyu Choi</author></td></tr>
+  <tr><td> Human-Agent Teaming as a Common Problem for Goal Reasoning  <br><author>Matthew Molineaux, Michael Floyd, Dustin Dannenhauer and David Aha	</author></td></tr>
+  <tr><td> Interaction and Learning in a Humanoid Robot Magic Performance	  <br><author>Kyle Morris, John Anderson, Meng Cheng Lau and Jacky Baltes	</author></td></tr>
+  <tr><td> A Framework for Complementary Video-Game Companion Character Behavior <br><author>Gavin Scott and Foaad Khosmood	</author></td></tr>
+  <tr><td>  Reasoning About Domains with PDDL<br><author>    Alexander Shleyfman and Erez Karpas</author></td></tr>
+  <tr><td> On Chatbots Exhibiting Goal-Directed Autonomy in Dynamic Environments	  <br><author>Biplav Srivastava	</author></td></tr>
+  <tr><td> Safe Goal-Directed Autonomy and the Need for Sound Abstractions  <br><author>Siddharth Srivastava	</author></td></tr>
+  <tr><td>Exploiting Micro-Clusters to Close The Loop in Data-Mining Robots for Human Monitoring	<br><author>Einoshin Suzuki	</author></td></tr>
+  <tr><td> Robot Behavioral Exploration and Multi-modal Perception using Dynamically Constructed Controllers  <br><author>Suhua Wei, Shiqi Zhang, Jivko Sinapov, Jesse Thomason and Peter Stone	</author></td></tr>
+  <tr><td> Learning Abstractions by Transferring Abstract Policies to Grounded State Spaces	  <br><author>Lawson L.S. Wong	</author></td></tr>
+  <tr><td> Information-Efficient Model Identification for Tensegrity Robot Locomotion	  <br><author>Shaojun Zhu, David Surovik, Kostas Bekris and Abdeslam Boularias	</td></tr>
+
+</tbody>
+</table>
+
+
+
+<div id="invited"></div><br><br>
+<h3>Invited Talks</h3>
+<br>
+<div class="lead">
+<span class="text-success" style="font-style:italic">An Integrated Model of Goal Reasoning</span><br>
+<span style="font-style:italic">David Aha, U.S. Naval Research Laboratory</span></div>
+
+<p>Goal reasoning (GR) allows an agent to dynamically reason
+about the relative utilities of goals it could pursue, which may result
+in changing its active goals. We have studied processes that support GR,
+focusing on situation assessment and decision making, and its
+application in (simulated and real) deliberative control tasks. I will
+present a simple integrated model for GR, review a progression of our
+work and how it relates to SIRLE’s themes, and summarize some of our
+current research objectives.</p>
+
+
+<p><span class="text-success">Dr. David Aha</span> leads the Adaptive Systems Section within NRL’s Navy
+Center for Applied Research in AI. His research interests include
+intelligent (e.g., goal reasoning) agents, planning, case-based
+reasoning, explainable AI (XAI), machine learning, and related topics.
+He co-organized 35 international events related to these topics (e.g.,
+ICCBR-17, AAAI-18 Senior Member Track, FAIM-18 XAI Workshop), launched
+the UCI Repository for ML Databases, served as a AAAI Councilor,
+co-created the AAAI Video Competition, received 5 publication awards,
+and gave the IAAI-17 Engelmore Memorial Lecture. He has led 4 DARPA
+(e.g., XAI) or ONR evaluation teams. His group regularly hosts
+post-doctoral researchers and many summer visitors.</p><br><br>
+
+
+<div class="lead">
+<span class="text-success" style="font-style:italic">From Prior Experience to Future Plans Using Models and Hierarchy</span><br>
+<span style="font-style:italic">Emma Brunskill, Stanford University</span></div>
+
+
+
+<br>
+<div class="lead">
+<span class="text-success" style="font-style:italic">The Challenge of Verification and Validation of Automated Planning Systems</span> [<a href="sirle18_frank.pdf">Slides</a>]<br>
+<span style="font-style:italic">Jeremy Frank, NASA Ames Research Center</span></div>
+
+<p>We discuss the opportunities for autonomous systems to perform
+reflection on their planners by adapting the models used to build
+plans. We first describe model-based planning systems, a form of
+automated planning system driven by declarative models of the planning
+domain. These models include descriptions of the conditions and
+effects of actions on the state of the world.  When planning the
+activities of cyber-physical systems, the command and data
+representation of the system must be formally abstracted to the
+actions and states described in the planning system model. When the
+execution of a plan either fails or produces unexpected outcomes, the
+execution trace can be abstracted and compared to the predicted state
+according to the planning model, producing a list of discrepancies;
+these discrepancies can then be used to fix the model. This provides
+part of a reflection capability, namely, a set of well-formed problems
+with the domain model, the abstractions, or both. The challenge lies
+in the rest of the reflection capability, namely, a set of techniques
+for changing the models or the abstractions. We discuss these
+challenges and describe some of the options for addressing them.</p>
+
+
+<p><span class="text-success">Dr. Jeremy
+Frank</span> <span class="text-muted">is the many-times great grandson
+of the infamous Dr. Victor Frankenstein; you could say that Artificial
+Intelligence runs in the family.  While unable to completely live down
+the infamous family name, Dr. Frank has nevertheless managed to bury
+the most unsavory parts of his history, and has made a minor name for
+himself by writing some obscure papers in the areas of computer
+science and AI, while moonlighting as a rocket scientist for a
+little-known space exploration agency that resides within a bloated,
+Byzentine bureacracy that poorly serves a large Western hemisphere
+country. Dr. Frank strives one day to abandon these fruitless pursuits
+and give over his time to his passions of writing fiction, birding,
+and cooking, but in the meantime, has shown some small skill in
+organizing people and fundraising.</span></p>
+
+<p>In other words, <span class="text-success">Dr. Jeremy Frank</span>
+is the Group Lead of Planning and Scheduling Group, in the Intelligent
+Systems Division, at NASA Ames Research Center. He received his
+Ph. D. from the Department of Computer Science, at the University of
+California at Davis, in June 1997. He also has a B.A. in Mathematics
+from Pomona College.  Dr. Frank’s work involves the development of
+automated planning and scheduling systems for use in space mission
+operations, the integration of technologies for planning, plan
+execution, and fault detection for space applications, and the
+development of technology to enable astronauts to autonomously operate
+spacecraft. Dr. Frank has published over 50 conference papers, nine
+journal papers, and three book chapters, and received over 40 NASA
+awards, including the Exceptional Achievement Medal, the Silver
+Snoopy, and the NASA Engineering and Safety Center Award.</p>
+
+(Thanks to Jeremy for offering an alternative bio!)
+<br><br>
+
+
+
+
+
+
+
+
+
+<div id="organization"></div><br><br>
+<h3>Organizing Committee</h3>
+<table class="table table-hover table-borderless table-responsive
+   table-condensed">
+  <thead>
+    <tr>
+        <th style="width:10%"></th>
+        <th style="width:30%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Siddharth Srivastava</td>
+      <td>Arizona State University</td>
+    </tr>
+    <tr>
+      <td>Shiqi Zhang</td>
+      <td>Cleveland State University</td>
+    </tr>
+    <tr>
+      <td>Nick Hawes</td>
+      <td>University of Oxford</td>
+    </tr>
+    <tr>
+      <td>Erez Karpas</td>
+      <td>Technion &ndash; Israel Institute of Technology</td>
+    </tr>
+    <tr>
+      <td>George Konidaris</td>
+      <td>Brown University</td>
+    </tr>
+    <tr>
+      <td>Matteo Leonetti</td>
+      <td>University of Leeds</td>
+    </tr>
+    <tr>
+      <td>Mohan Sridharan</td>
+      <td>The University of Auckland</td>
+    </tr>
+    <tr>
+      <td>Jeremy Wyatt</td>
+      <td>University of Birmingham</td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="pc"></div><br>
+<h3>Program Committee</h3>
+<table class="table table-hover table-borderless table-responsive
+   table-condensed">
+  <thead>
+    <tr>
+        <th style="width:10%"></th>
+        <th style="width:30%"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Christopher	Amato</td>
+      <td>Northeastern University</td>
+    </tr>
+
+    <tr>
+      <td>J.	Benton</td>
+      <td>NASA Ames Research Center / AAMU-RISE</td>
+    </tr>
+
+
+    <tr>
+      <td>Joydeep	Biswas</td>
+      <td>University of Massachusetts Amherst</td>
+    </tr>
+ 
+    <tr>
+      <td>Minh	Do</td>
+      <td>NASA Ames Research Center</td>
+    </tr>
+
+    <tr>
+      <td>Esra	Erdem</td>
+      <td>Sabanci University</td>
+    </tr>
+
+   <tr>
+      <td>Georgios	Fainekos</td>
+      <td>Arizona State University</td>
+    </tr>
+
+    <tr>
+      <td>Alberto	Finzi</td>
+      <td>Universita' di Napoli Federico II</td>
+    </tr>
+
+    <tr>
+      <td>Michael	Gelfond</td>
+      <td>Texas Tech University</td>
+    </tr>
+
+    <tr>
+      <td>Marc	Hanheide</td>
+      <td>University of Lincoln</td>
+    </tr>
+
+    <tr>
+      <td>Laura	Hiatt</td>
+      <td>U.S. Naval Research Laboratory</td>
+    </tr>
+
+    <tr>
+      <td>Luca	Iocchi</td>
+      <td>Sapienza University of Rome</td>
+    </tr>
+
+    <tr>
+      <td>Leslie	Kaelbling</td>
+      <td>MIT</td>
+    </tr>
+
+    <tr>
+      <td>Sven	Koenig</td>
+      <td>University of Southern California</td>
+    </tr>
+
+    <tr>
+      <td>Lars	Kunze</td>
+      <td>University of Oxford</td>
+    </tr>
+
+    <tr>
+      <td>Bruno Lacerda</td>
+      <td>University of Oxford</td>
+    </tr>
+
+    <tr>
+      <td>Gerhard	Lakemeyer</td>
+      <td>RWTH Aachen University</td>
+    </tr>
+
+    <tr>
+      <td>Daniele	Magazzeni</td>
+      <td>King's College London</td>
+    </tr>
+
+    <tr>
+      <td>Lenka	Mudrova</td>
+      <td>University of Birmingham</td>
+    </tr>
+
+    <tr>
+      <td>Tim	Niemueller</td>
+      <td>RWTH Aachen University</td>
+    </tr>
+
+    <tr>
+      <td>Andrea	Orlandini</td>
+      <td>National Research Council of Italy (ISTC-CNR)</td>
+    </tr>
+
+    <tr>
+      <td>Federico	Pecora</td>
+      <td>Orebro University</td>
+    </tr>
+
+    <tr>
+      <td>Subramanian	Ramamoorthy</td>
+      <td>The University of Edinburgh</td>
+    </tr>
+
+    <tr>
+      <td>Mark	Roberts</td>
+      <td>Naval Research Laboratory</td>
+    </tr>
+
+    <tr>
+      <td>Alessandro	Saffiotti</td>
+      <td>Orebro University</td>
+    </tr>
+
+    <tr>
+      <td>Enrico	Scala</td>
+      <td>ANU Research School in Computer Science</td>
+    </tr>
+
+    <tr>
+      <td>Jivko	Sinapov</td>
+      <td>Tufts University</td>
+    </tr>
+
+    <tr>
+      <td>Sylvie	Thiebaux</td>
+      <td>ANU</td>
+    </tr>
+
+    <tr>
+      <td>Yu	Zhang</td>
+      <td>Arizona State University</td>
+    </tr>
+
+
+    <tr>
+      <td>Shlomo	Zilberstein</td>
+      <td>	University of Massachusetts Amherst</td>
+    </tr>
+
+
+
+  </tbody>
+</table>
+
+<br><br>
+  
+</div>
+<div class="col-sm-1"></div> 
+</div>
+
+
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

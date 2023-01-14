@@ -1,0 +1,18 @@
+%p T1(u)	unique
+%p inT1(u)
+%p T2(u)	unique
+%p inT2(u)
+
+%p atL1(u)
+%p atL2(u)
+%p atL3(u)
+%p atL4(u)
+
+%p Kind1(u)
+%p Kind2(u)
+
+%p chosenObj(u_0,u_1)		function
+%p selectedCrate(u)	unique
+%p arg(u_0) 
+%p TRUCK(u_1)
+%p CRATE(u_1)

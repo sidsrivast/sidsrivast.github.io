@@ -1,0 +1,53 @@
+
+%action no_op(){
+	%t "dummy action"
+}
+
+%action unstack() {
+	%t "unstack"
+	%f {E(x) topmost(x)& !onTable(x) & on(x,y)}
+	%p (topmost(v) & !onTable(v))
+	{
+	 on(v1,v2) = on(v1,v2) & (v1!=v)
+	 inGripper(v1) =  v1==v
+	 topmost(v1) = topmost(v1) | on(v,v1)
+	 t[on](v1,v2) = (t[on](v1,v2) & v!=v1 ) | (v1==v2)
+	 green(x) = 0
+	}
+}
+
+%action chooseObjSense(){
+	%t "set up sensing predicate"
+	{
+	chosenObjGreen(u,v) = arg(u) & topmost(v) & isGreen(u,v)
+	pre_sense_done(u) = arg(u)
+	}
+}
+
+%action senseTopmost(){
+	%t "sense topmost color"
+	%f {E(u) arg(u) & chosenObjGreen(u, x)}
+	%p (E(u) arg(u) & pre_sense_done(u))
+	{
+	green(v) = E(u) arg(u) & chosenObjGreen(u,v)
+	chosenObjGreen(u,v) = 0
+	pre_sense_done(u) = 0
+	}
+	}
+
+%action collect(){
+	%t "collect block in gripper"
+	%p (E(x) inGripper(x))
+	{
+	collected(x) = inGripper(x)
+	}
+}
+
+%action discard(){
+	%t "discard block in gripper"
+	%p (E(x) inGripper(x))
+	{
+	}
+	%retain !inGripper(x)
+}
+

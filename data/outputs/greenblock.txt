@@ -1,0 +1,12 @@
+ set up sensing predicate	(struc 0)
+ sense topmost color		(struc 1)
+ unstack			(struc 2)
+Repeat
+   ' discard block in gripper'	(struc 3)
+   ' set up sensing predicate'	(struc 4)
+   ' sense topmost color'	(struc 5)
+   ' unstack'			(struc 4)
+   --> Exit at  sense topmost color, struc 5
+ unstack			(struc 6)
+ collect block in gripper	(struc 7)
+

@@ -1,0 +1,20 @@
+%p T(u) unique
+
+%p delivered(u)
+%p garage(u)	unique
+%p dock(u)
+%p store(u)
+%p item(u)
+%p arg(u) unique
+%p chosen_obj(u,v) function
+%p argobj(u)	unique
+%p scanned(u)	unique 
+%p itemdest(u) unique
+%p Cdestination(u) unique
+%p dest(u,v)	function
+%p inT(u)	unique
+%p at(u,v)	function
+
+%r A(v) !dest(u,v)==> !item(u)
+%r A(v) !at(u,v)==> !item(u)
+

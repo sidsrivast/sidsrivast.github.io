@@ -1,0 +1,171 @@
+%action no_op(){
+	%t "dummy action"
+}
+
+%action choose_objs(obj){
+	%t "choose x:"+obj
+	{
+	chosenObj(v, u_1) =  arg(v) & obj(u_1) & 1/2 
+	}
+}
+
+%action choose_objs_k1(loc){
+	%t "choose x: kind1;"+loc
+	{
+	chosenObj(v, u_1) =  arg(v) & Kind1(u_1) & loc(u_1) & 1/2 
+	}
+}
+
+%action choose_objs_k2(loc){
+	%t "choose x: kind1;"+loc
+	{
+	chosenObj(v, u_1) =  arg(v) & Kind2(u_1) & loc(u_1) & 1/2 
+	}
+}
+
+
+%action focus_chosen(){
+	%t "focus chosen"
+	%f {(E(v) arg(v) & chosenObj(v,u))}
+	%p (E(v,u) arg(v) & chosenObj(v,u))  
+	{
+	selectedCrate(u) = E(v) arg(v) & chosenObj(v,u)
+	chosenObj(u0,u1) = 0
+	}
+}
+
+
+%action LoadT1(){
+	%t "LoadT1 "
+	%f {arg(u0) & CRATE(c) & selectedCrate(c)}
+	%p ( selectedCrate(u) & T1(t) 
+	    & !inT1(u) & !inT2(u) &
+	   ((atL1(u) & atL1(t)) | (atL2(u) & atL2(t)) |
+	   (atL3(u) & atL3(t)) | (atL4(u) & atL4(t))) &
+	   (T1(t) -> A(z) !inT1(z))
+	   )
+	{
+	inT1(u_1) = inT1(u_1)|(T1(t) & u==u_1 )
+	}
+}
+
+%action LoadT2(){
+	%t "LoadT2 "
+	%f {arg(u0) & CRATE(c) & selectedCrate(c)}
+	%p ( selectedCrate(u) & T2(t) 
+	    & !inT1(u) & !inT2(u) &
+	   ((atL1(u) & atL1(t)) | (atL2(u) & atL2(t)) |
+	   (atL3(u) & atL3(t)) | (atL4(u) & atL4(t))) &
+	   A(u,v) (inT2(u) & inT2(v) -> (u==v) )
+	   )
+	{
+	inT2(u_1) = inT2(u_1)|(T2(t) & u==u_1 )
+	}
+}
+
+
+%action UnloadT1(){
+	%t "UnloadT1"
+	%p T1(t) & 
+	   E(u) ( inT1(u) & (atL4(t) -> (E(u,v) (inT1(u) & inT1(v)& u!=v) ) ))
+	{
+	inT1(u) = 0
+	selectedCrate(u_0) = 0
+	}
+}
+
+
+%action GoToL2T1(){
+	%t "MoveT1L2 " 
+	%p T1(t) & atL3(t)
+	{
+	atL3(u) = atL3(u) & (u!=t) & !inT1(u) 
+	atL2(u) = atL2(u) | (u == t) | inT1(u)
+	}
+}
+
+%action GoToL1T1(){
+	%t "MoveT1L1 " 
+	%p T1(t) & atL3(t)
+	{
+	atL3(u) = atL3(u) & (u!=t) & !inT1(u) 
+	atL1(u) = atL1(u) | (u == t) | inT1(u) 
+	}
+}
+
+%action GoToL3T1(){
+	%t "MoveT1L3 " 
+	%p T1(t) & (atL1(t) | atL2(t) |atL4(t))
+	{
+	atL1(u) = atL1(u) & (!atL1(t) |
+			(atL1(t) & u!=t & !inT1(u)))
+	atL2(u) = atL2(u) & ( !atL2(t) |
+			(atL2(t) & u!=t & !inT1(u)))
+	atL4(u) = atL4(u) & ( !atL4(t) |
+			(atL4(t) & u!=t & (T1(t) -> !inT1(u))))
+	atL3(u) = atL3(u) | (u == t) | inT1(u) 
+	}
+}
+
+%action GoToL4T1(){
+	%t "MoveT1L4 " 
+	%p T1(t) & atL3(t)
+	{
+	atL3(u) = atL3(u) & u!=t & !inT1(u)
+	atL4(u) = atL4(u) | (u == t) | inT1(u)
+	}
+}
+
+
+%action UnloadT2(){
+	%t "UnloadT2"
+	%p T2(t) & 
+	   E(u) ( inT2(u) &
+	   (atL4(t) -> ((E(u,v) (inT2(u) & inT2(v)& u!=v) ))))
+		
+	{
+	inT2(u) = 0
+	selectedCrate(u_0) = 0
+	}
+}
+
+%action GoToL2T2(){
+	%t "MoveT2L2 " 
+	%p T2(t) & atL3(t)
+	{
+	atL3(u) = atL3(u) & (u!=t) & !inT2(u) 
+	atL2(u) = atL2(u) | (u == t) | inT2(u)
+	}
+}
+
+%action GoToL1T2(){
+	%t "MoveT2L1 " 
+	%p T2(t) & atL3(t)
+	{
+	atL3(u) = atL3(u) & (u!=t) & !inT2(u) 
+	atL1(u) = atL1(u) | (u == t) | inT2(u) 
+	}
+}
+
+%action GoToL3T2(){
+	%t "MoveT2L3 " 
+	%p T2(t) & (atL1(t) | atL2(t) |atL4(t))
+	{
+	atL1(u) = atL1(u) & (!atL1(t) |
+			(atL1(t) & u!=t & !inT2(u)))
+	atL2(u) = atL2(u) & ( !atL2(t) |
+			(atL2(t) & u!=t & !inT2(u)))
+	atL4(u) = atL4(u) & ( !atL4(t) |
+			(atL4(t) & u!=t & (T2(t) -> !inT2(u))))
+	atL3(u) = atL3(u) | (u == t) | inT2(u) 
+	}
+}
+
+%action GoToL4T2(){
+	%t "MoveT2L4 " 
+	%p T2(t) & atL3(t)
+	{
+	atL3(u) = atL3(u) & u!=t & !inT2(u)
+	atL4(u) = atL4(u) | (u == t) | inT2(u)
+	}
+}

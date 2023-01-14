@@ -1,0 +1,39 @@
+%action no_op(){
+	%t "dummy action"
+}
+
+%action mvR(){
+	%t "mvR"
+	%f {E(x) at(x) & r(x,y)}
+	{
+	at(u) = E(x) at(x) & r(x,u)
+	visited(u) = visited(u) | E(x) at(x) & r(x,u)
+	}
+}
+
+%action mvL(){
+	%t "mvL"
+	%f {E(x) at(y) & r(x,y)}
+	{
+	at(u) = E(x) at(x) & r(u,x)
+	visited(u) = visited(u) | E(x) at(x) & r(u,x)
+	}
+}
+
+%action mvD(){
+	%t "mvD"
+	%f {E(x) at(y) & u(x,y)}
+	{
+	at(u) = E(x) at(x) & u(u,x)
+	visited(u) = visited(u) | E(x) at(x) & u(u,x)
+	}
+}
+
+%action mvU(){
+	%t "mvU"
+	%f {E(x) at(x) & u(x,y)}
+	{
+	at(u) = E(x) at(x) & u(x,u)
+	visited(u) = visited(u) | E(x) at(x) & u(x,u)
+	}
+}

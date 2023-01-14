@@ -1,0 +1,27 @@
+/* green_pred.tvp */
+
+%p pre_sense_done(u)	
+%p arg(u)	  unique
+%p chosenObjGreen(u,v)
+%p isGreen(u,v)
+%p green(u)
+%p inGripper(u)
+%p collected(x)
+%p onTable(v1)					
+%p on(v1,v2)	function acyclic invfunction	
+%p topmost(v1)
+%i t[on](v_1, v_2) = on*(v_1, v_2) transitive reflexive
+
+
+
+// Integrity constraints for transitive reachability
+%r !t[on](v_1, v_2) ==> !on(v_1, v_2)
+%r !t[on](v_1, v_2) ==> v_1 != v_2
+%r E(v_1) (t[on](v_1, v_2) & t[on](v_1, v_3) & !t[on](v_2, v_3)) ==>
+t[on](v_3, v_2)
+%r t[on](v_1, v_2) & !sm(v_1) & !sm(v_2) & (v_1 != v_2) & (!E(v_3)
+(v_3 != v_2) & (v_3 != v_1) & t[on](v_1, v_3)) ==> on(v_1, v_2)
+
+
+
+

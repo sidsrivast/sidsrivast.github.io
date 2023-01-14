@@ -1,0 +1,23 @@
+
+
+%n = {u0,u1, u2, u3, u4}
+%p = {
+	sm = {u2:1/2, u3:1/2}
+	T1 = {u0:1}
+	T2 = {u1:1}
+	atL1 = {u0:1, u2:1}
+	atL2 = {u1:1, u3:1}
+	atL3 = {}
+	atL4 = {}
+	inT1 = {}
+	inT2 = {}
+	Kind1 = {u2:1}
+	Kind2 = {u3:1}
+	chosen_obj = {}
+	chosen_truck = {} 
+	selected_crate = {}
+	selected_truck = {}
+	arg = {u4:1}
+	TRUCK = {u0:1, u1:1}
+	CRATE = {u2:1, u3:1}
+}

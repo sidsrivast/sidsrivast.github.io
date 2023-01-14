@@ -1,0 +1,82 @@
+// In this domain focusing on chosen predicates takes place
+// as a part of the action update.
+// E.g. see the focus formula for mv()
+
+%action no_op(){
+	%t "dummy action"
+}
+
+%action choose_onTable(color) {
+	%t "choose x: onTable_"+color
+	{
+	chosen(v) = 1/2 & color(v) & onTable(v) & topmost(v)
+	}
+}
+
+%action choose1(block){
+	%t "choose x:" + block
+	{
+	chosen(v) = block(v) & 1/2
+	}
+}
+
+%action choose2(block){
+	%t "choose x:" + block
+	{
+	chosen2(v) = block(v) 
+	}
+}
+
+%action choose_topmost(){
+	%t "choose x: topmost"
+	{
+	chosen(v) = 1/2 & topmost(v) & !onTable(v)
+	}
+}
+
+%action choose_topmostNotOnTable(){
+	%t "choose x: topmost_!ontable"
+	{
+	chosen2(v) = topmost(v) & !onTable(v)
+	}
+}
+
+%action choose_base(){
+	%t "choose x: red_base"
+	{
+	chosen2(v) = base(v)
+	}
+}
+
+
+%action mTT() {
+	%t "mTT"
+	%f {chosen(v1) & on(v1,v2)}
+	%p chosen(v) & !onTable(v)
+	{ on(v1,v2) = on(v1,v2) & (v1!=v)
+	  onTable(v1) = onTable(v1) | v1==v
+	  topmost(v1) = topmost(v1) | on(v,v1)
+	  t[on](v1,v2) = (t[on](v1,v2) & v!=v1 ) | (v1==v2)
+	  misplaced(v1) = misplaced(v1) | (v==v1)
+	  chosen(v1) = 0
+	}
+}
+
+%action mv() { 
+	%t "mv"
+ 	%f {chosen(block1) & on(block1,v1)}
+	%p (chosen(block1) & chosen2(block2) & (block1 != block2) & 
+	topmost(block2)	& topmost(block1))
+	{on(v1,v2) = (on(v1,v2) & (v1 != block1) ) | ((v1 == block1) &
+	(v2 == block2)) 
+	onTable(v1) = onTable(v1) & (v1 != block1)
+	topmost(v1) = (topmost(v1) & v1 != block2) |
+	(on(block1,v1))|(block1 == v1)
+	t[on](v1,v2) = (t[on](v1,v2) & (v1 != block1))|(v1 == block1)
+	& (v2 == block2| t[on](block2,v2))|(v1 == v2)
+	misplaced(v1) = misplaced(v1) & v1 != block1
+	chosen(v1) = 0
+	chosen2(v1) = 0
+	}
+}
+

@@ -1,0 +1,36 @@
+ choose x: topmost	(struc 0)
+ mTT	   		(struc 1)
+Repeat
+   ' choose x: topmost'	(struc 3)
+   ' mTT'		(struc 3)
+   --> Exit at  mTT, struc 3
+ choose x: topmost	(struc 4)
+ mTT	   		(struc 4)
+ choose x: topmost	(struc 5)
+ mTT	   		(struc 5)
+Repeat
+   ' choose x: topmost'	(struc 7)
+   ' mTT'		(struc 7)
+   --> Exit at  mTT, struc 7
+ choose x: topmost	(struc 8)
+ mTT	   		(struc 8)
+ choose x: onTable Blue	(struc 9)
+ choose x: red base	(struc 9)
+ mv	       		(struc 10)
+ choose x: onTable Red	(struc 11)
+ choose x: topmost !ontable	(struc 11)
+ mv	   	   		(struc 12)
+ choose x: onTable Blue		(struc 13)
+ choose x: topmost !ontable	(struc 13)
+ mv	   	   		(struc 14)
+Repeat
+   ' choose x: onTable Red'	(struc 19)
+   ' choose x: topmost !ontable'	(struc 19)
+   ' mv'	       			(struc 20)
+   ' choose x: onTable Blue'		(struc 21)
+   ' choose x: topmost !ontable'	(struc 21)
+   ' mv'	       			(struc 22)
+   --> Exit at  mv, struc 20
+ choose x: onTable Blue			(struc 23)
+ choose x: topmost !ontable		(struc 23)
+ mv	   	   			(struc 24)

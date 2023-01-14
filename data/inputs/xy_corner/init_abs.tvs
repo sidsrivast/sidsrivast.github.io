@@ -1,0 +1,16 @@
+%n = {u0, u1, u2,
+      u11,u12
+      }
+
+%p = {
+     arg = {u0:1}
+     sm = {u11:1/2,u12:1/2,u1:1/2,u2:1/2}
+     dFromS = {u11:1}
+     dFromN = {u12:1}
+     dFromW = {u1:1}
+     dFromE = {u2:1}
+     nextN =  {(u0,u12):1/2}
+     nextE =  {(u0,u2):1/2}
+     nextS =  {(u0,u11):1/2}
+     nextW =  {(u0,u1):1/2}
+}

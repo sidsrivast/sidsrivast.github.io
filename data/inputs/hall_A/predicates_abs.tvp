@@ -1,0 +1,20 @@
+/* Hall-A from Bonet et. al. ICAPS 2009*/
+
+
+%p r(x,y) function acyclic invfunction
+%p u(x,y) function acyclic invfunction
+%p at(x) unique
+
+%i t[r](x,y) = r*(x, y) transitive reflexive
+%i t[u](x,y) = u*(x, y) transitive reflexive
+
+
+%p nborder(x)
+%p sborder(x)
+%p eborder(x)
+%p wborder(x)
+%p visited(x)
+
+
+
+

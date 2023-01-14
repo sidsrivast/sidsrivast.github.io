@@ -1,0 +1,53 @@
+%action no_op(){
+	%t "dummy action"
+}
+
+%action mvE(n){
+	%t "mvE"
+	%f {arg(u) & nextE(u,x)}
+	%p E(x,y) arg(x) & nextE(x,y)
+	{
+	dFromW(u) = dFromW(u) | E(x) arg(x) & nextE(x,u)
+	dFromE(u) = dFromE(u) & (!E(x) arg(x) & nextE(x,u))
+	nextE(u,x) = arg(u) & n(x) & dFromE(x) & !nextE(u,x) & 1/2
+	nextW(u,x) = arg(u) & nextE(u,x)& 1/2
+	}
+}
+
+
+%action mvW(n){
+	%t "mvW"
+	%f {arg(u) & nextW(u,x) }
+	%p E(x,y) arg(x) & nextW(x,y)
+	{
+	dFromE(u) = dFromE(u) | E(x) arg(x) & nextW(x,u)
+	dFromW(u) = dFromW(u) & (!E(x) arg(x) & nextW(x,u))
+	nextW(u,x) = arg(u) & n(x) & dFromW(x) & !nextW(u,x) & 1/2
+	nextE(u,x) = arg(u) & nextW(u,x)& 1/2
+	}
+}
+
+
+%action mvN(n){
+	%t "mvN"
+	%f {arg(u) & nextN(u,x) }
+	%p E(x,y) arg(x) & nextN(x,y)
+	{
+	dFromS(u) = dFromS(u) | E(x) arg(x) & nextN(x,u)
+	dFromN(u) = dFromN(u) & (!E(x) arg(x) & nextN(x,u))
+	nextN(u,x) = arg(u) & n(x) & dFromN(x) & !nextN(u,x) & 1/2
+	nextS(u,x) = arg(u) &  nextN(u,x)& 1/2
+	}
+}
+
+%action mvS(n){
+	%t "mvS"
+	%f {arg(u) & nextS(u,x) }
+	%p E(x,y) arg(x) & nextS(x,y)
+	{
+	dFromN(u) = dFromN(u) | E(x) arg(x) & nextS(x,u)
+	dFromS(u) = dFromS(u) & (!E(x) arg(x) & nextS(x,u))
+	nextS(u,x) = arg(u) & n(x) & dFromS(x) & !nextS(u,x) & 1/2
+	nextN(u,x) = arg(u) & nextS(u,x)& 1/2
+	}
+}

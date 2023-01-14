@@ -1,0 +1,8 @@
+ mvE	(struc 0)
+Repeat
+   ' mvE'	(struc 1)
+   --> Exit at  mvE, struc 1
+Repeat
+   ' mvN'	(struc 2)
+   --> Exit at  mvN, struc 2
+

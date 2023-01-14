@@ -1,0 +1,79 @@
+body {
+   /* background:#666666; */
+    padding-top: 80px; 
+    padding-left: 10px;
+	/* background: #3E4649; */
+    /* color: #f7f7f7; */
+	font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+}
+
+
+body a {
+color: blue2;
+}
+body a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+figcaption{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+.title  {
+    font-family: 'Cairo', sans-serif;
+}
+
+h2,h3,h4.page {
+    font-family: 'Abel', sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
+
+p{
+text-align: justify;
+}
+
+
+.navbar-custom {
+    /* background-color: #003366; */
+	font-family: 'Rajdhani', sans-serif;
+    background-color: #333333;
+}
+
+
+
+.img-fluid{
+    max-width: 100%;
+}
+
+
+ul.papers a{
+color: blue2;
+}
+
+desc{
+    font-size: 14px;
+}
+
+ptitle{
+    font-weight: bold;
+}
+
+/* .here a{ */
+/*     font-weight: bold; */
+/*     background-color: #000000; */
+/*     color: white; */
+/* } */
+
+.navbar .active{
+    font-weight: bold;
+    color: white;
+}
+

@@ -1,0 +1,155 @@
+			ICAPS 2009 Workshop on
+	Generalized Planning: Macros, Loops, Domain Control
+	    	         Sep 20th, 2009
+
+             http://www.cs.umass.edu/~siddhart/genplan09/
+
+		  	 Call for Papers
+		  	 ===============
+
+               	   Extended Deadline: June 28, 2009
+
+Overview
+--------
+
+Research in classical planning has led to significant improvements in
+planner performance. However, lack of scalability with respect to the
+number of objects in the domain remains a longstanding open problem.
+
+We invite contributions from researchers working to address this
+challenge. Possible research directions include generating plans that
+solve multiple problem instances by employing rich plan structures
+such as loops, using domain control knowledge for reducing the cost of
+planning, and other related areas. Common to many of these approaches
+is the notion of a generalized plan -- a rich representation that
+resembles a computer program with branches and loops. While approaches
+exploiting such representations have demonstrated promising results,
+many fundamental challenges remain.
+
+The broad goal of this workshop is to provide a forum for discussion
+and evaluation of techniques for building scalable planners that
+utilize rich representations for expressing knowledge and solution
+plans. An additional objective is to re-evaluate some of the most
+fundamental, traditionally accepted notions in planning about plan
+structure and representation of domain knowledge. Some of the
+questions motivating this workshop are:
+
+	  - How can we effectively find, represent and utilize
+            high-level knowledge about planning domains?
+
+	  - What makes finding plans with complex control structure
+            difficult?
+
+	  - What separates planning problems from program synthesis
+            problems?
+
+	  - What are the computational limits to the feasibility of
+            these problems?
+
+ 	  - Can restricted -- practical, yet efficiently solvable --
+             formulations of generalized planning be developed?
+
+
+
+
+Topics
+------
+
+Topics of interest to this workshop bring together research being
+conducted in a range of areas, including classical planning, knowledge
+engineering, partial policies and hierarchical reinforcement learning,
+plan verification, and model checking. Potential topics include but
+are not limited to: 
+
+ - generating plans with loops 
+ - generating parametrized plans 
+ - instantiating parametrized plans 
+ - learning macro actions 
+ - planning with complex actions 
+ - learning domain control knowledge 
+ - planning with domain control knowledge (e.g., Golog, HTNs, control rules) 
+ - reasoning about complex actions 
+ - planning with partial policies 
+ - plan verification 
+ - generating robust or partial schedules 
+
+
+as well as applications of these ideas in: 
+
+ - planning with plan scripts or schemas 
+ - work-flows 
+ - web service composition 
+ - grid services 
+
+
+
+Paper Format and Submission
+---------------------------
+
+We invite technical papers (up to 8 pages), position papers (up to 2
+pages) and papers with clear and concise formulations of open problems
+and potential solution approaches (up to 4 pages). Non-technical
+papers can be more exploratory in nature; however, complexity analyses
+of proposed solutions or comparisons with existing approaches are
+encouraged. We invite submissions describing either work in progress
+or mature work that has already been published at other research
+venues.  Submission of previously published work in whole or in part
+may be in the form of a resubmission of a previous paper, or in the
+form of a position paper that overviews and cites a body of work.
+
+All papers should be typeset in the AAAI style, described at
+http://www.aaai.org/Publications/Author/author.php.
+
+Papers should be submitted in PDF form by email to genplan09 "at"
+cs.toronto.edu, with "Genplan-09 submission" as the subject. Queries
+about the submission procedure or other details can also be sent to
+this address.
+
+While the workshop itself will not have any registration fees,
+workshop participants will need to register for ICAPS-09.
+
+
+
+Important Dates
+---------------
+
+Paper Submission Deadline	Extended to June 28, 2009
+Author Notification		July 22, 2009
+Final Version			Aug 8, 2009
+Workshop Date			Sep 20, 2009 
+
+
+
+Program Committee
+-----------------
+
+Chitta Baral, Arizona State University, USA 
+Adi Botea, NICTA and Australian National University, Australia 
+Alessandro Cimatti, IRST, Italy 
+Maria Fox, University of Strathclyde, UK 
+Hector Geffner, ICREA, Spain 
+Robert Goldman, SIFT, USA 
+Subbarao Kambhampati, Arizona State University, USA
+Ugur Kuter, University of Maryland, USA 
+Gerhard Lakemeyer, Aachen University of Technology, Germany 
+Hector Levesque, University of Toronto, Canada 
+Sheila McIlraith, University of Toronto, Canada 
+Karen Myers, SRI International, USA
+Bernhard Nebel, University of Freiburg, Germany
+Stuart Russell, University of California, Berkeley, USA 
+Sebastian Sardina, RMIT University, Australia 
+Manuela Veloso, Carnegie Mellon University, USA 
+Brian Williams, Massachusetts Institute of Technology, USA 
+Shlomo Zilberstein, University of Massachusetts, Amherst, USA 
+
+
+
+Organizing Committee
+--------------------
+
+Christian Fritz, University of Toronto, Canada			(Co-Chair)
+Sheila McIlraith, University of Toronto, Canada
+Siddharth Srivastava, University of Massachusetts Amherst, USA	(Co-Chair)
+Shlomo Zilberstein, University of Massachusetts Amherst, USA
+
+

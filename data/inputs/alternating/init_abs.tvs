@@ -1,0 +1,17 @@
+// u0 is on table, u1 is the middle summary, u2 is on top.
+
+%n =	{u0, u1, u2, u3}
+%p =	{
+	sm = {u2:1/2, u1:1/2}
+	Red = {u1:1, u0:1}
+	Blue = {u3:1, u2:1}
+	on = {(u3,u2):1/2, (u2,u2):1/2, (u2,u1):1/2, (u1,u1):1/2, (u1,u0):1/2}
+	t[on] = {(u3,u3):1, (u2,u2):1/2, (u1,u1):1/2, (u0,u0):1, 
+	(u3,u2):1, (u3,u1):1, (u3,u0):1, (u2,u1):1, (u2,u0):1, (u1,u0):1} 
+	topmost = {u3:1}
+	onTable = {u0:1}
+	chosen  = {u3:1}
+	misplaced = {u3:1, u2:1, u1:1}
+	base = {u0:1}
+	}
+
